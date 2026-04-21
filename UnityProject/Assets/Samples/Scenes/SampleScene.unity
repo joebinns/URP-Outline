@@ -261,7 +261,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::OutlineManager
   _minOutlineWidth: 9
   _maxOutlineWidth: 11
-  _pulsePeriod: 2
+  _pulsePeriod: 4
 --- !u!4 &483904923
 Transform:
   m_ObjectHideFlags: 0

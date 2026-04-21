@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 [ExecuteAlways]
 public class OutlineManager : MonoBehaviour
@@ -23,6 +24,7 @@ public class OutlineManager : MonoBehaviour
 		_outlineWidth = baseOutlineWidth + range * Mathf.Sin(_progress * 2f * Mathf.PI);
 		_progress += Time.deltaTime / _pulsePeriod;
 		RefreshShaderProperties();
+		RFO.Instance?.SetOutlineWidth(_outlineWidth);
 	}
 
 	// REFRESH

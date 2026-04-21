@@ -199,17 +199,25 @@ public class RFO : ScriptableRendererFeature
         [Min(0f)] public float outlineWidth;
         public bool useSeparableAxisMethod;
     }
- 
-    public RFOSettings settings = new ();
+
+	public static RFO Instance { get; private set; }
+	public RFOSettings settings = new ();
     RFOPass outlinePass;
- 
-    public override void Create()
+	float? runtimeOutlineWidth = null;
+
+	public override void Create()
     {
+        Instance = this;
         outlinePass = new RFOPass(settings.outlineMaterial);
         outlinePass.renderPassEvent = RenderPassEvent.AfterRenderingTransparents;
     }
- 
-    public override void AddRenderPasses(ScriptableRenderer renderer, ref RenderingData renderingData)
+
+	public void SetOutlineWidth(float width)
+	{
+		runtimeOutlineWidth = width;
+	}
+
+	public override void AddRenderPasses(ScriptableRenderer renderer, ref RenderingData renderingData)
     {
         if (settings.outlineMaterial == null)
         {
@@ -217,10 +225,12 @@ public class RFO : ScriptableRendererFeature
             return;
         }
 
-        outlinePass.Setup(
+		float outlineWidth = runtimeOutlineWidth ?? settings.outlineWidth;
+
+		outlinePass.Setup(
             settings.targetLayerMask,
             settings.outlineColor,
-            settings.outlineWidth,
+            outlineWidth,
             settings.useSeparableAxisMethod);
         
         renderer.EnqueuePass(outlinePass);

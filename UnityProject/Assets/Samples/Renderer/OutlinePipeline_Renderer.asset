@@ -117,5 +117,5 @@ MonoBehaviour:
       serializedVersion: 2
       m_Bits: 64
     outlineColor: {r: 1, g: 1, b: 1, a: 1}
-    outlineWidth: 12
+    outlineWidth: 10
     useSeparableAxisMethod: 1

@@ -1227,7 +1227,7 @@
     "m_Hidden": false,
     "m_ShaderOutputName": "Rotation",
     "m_StageCapability": 3,
-    "m_Value": 0.0,
+    "m_Value": -45.0,
     "m_DefaultValue": 0.0,
     "m_Labels": []
 }
@@ -2614,7 +2614,7 @@
     "m_ShaderOutputName": "B",
     "m_StageCapability": 3,
     "m_Value": {
-        "e00": 0.0,
+        "e00": -1.0,
         "e01": 2.0,
         "e02": 2.0,
         "e03": 2.0,
@@ -3598,7 +3598,7 @@
     "m_Hidden": false,
     "m_ShaderOutputName": "X",
     "m_StageCapability": 3,
-    "m_Value": 16.0,
+    "m_Value": 31.0,
     "m_DefaultValue": 0.0,
     "m_Labels": []
 }

@@ -35,8 +35,7 @@ public class RFO : ScriptableRendererFeature
         {
             this.targetLayer = targetLayer;
             this.outlineColor = outlineColor;
-            // unity will crash if outline width is less than zero
-            this.outlineWidth = outlineWidth > 0 ? outlineWidth : 0;
+            this.outlineWidth = outlineWidth;
             this.useSeparableAxisMethod = useSeparableAxisMethod;
         }
  
@@ -197,7 +196,7 @@ public class RFO : ScriptableRendererFeature
         public Material outlineMaterial;
         public LayerMask targetLayerMask;
         public Color outlineColor;
-        public float outlineWidth;
+        [Min(0f)] public float outlineWidth;
         public bool useSeparableAxisMethod;
     }
  
